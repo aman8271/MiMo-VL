@@ -46,10 +46,10 @@ We believe this report along with the models will provide valuable insights to d
 
 ### 🛤️ During this journey, we find
 
-- **Incorporating high-quality, broad-coverage reasoning data from the pre-training stage is crucial for enhancing model performance.**
-  - We collect data spanning multimodal perception, knowledge-intensive problems, and tasks demanding strong reasoning capabilities. We identify high-quality queries via quality scoring, employ a large reasoning model to regenerate responses with long CoT, and then apply rejection sampling to secure high-quality responses.
-  - Distinct from "lite SFT" approaches, we incorporate a substantial volume of this synthetic reasoning data into the later pre-training stages. Notably, the model’s performance on this dataset continued to improve over multiple epochs (e.g., 5), demonstrating resilience against saturation.
-- **Mixed On-policy Reinforcement Learning further enhances model performance, while achieving stable simultaneous improvements still remains challenging**
+- **Incorporating high-quality, broad-coverage reasoning data from the pre-training stage is crucial for enhancing model performance**
+  - We curate high-quality reasoning data by identifying diverse queries, employing large reasoning models to regenerate responses with long CoT, and applying rejection sampling to ensure quality.
+  - Rather than treating this as supplementary fine-tuning data, we incorporate substantial volumes of this synthetic reasoning data directly into the later pre-training stages, where extended training yields continued performance improvements without saturation.
+- **Mixed On-policy Reinforcement Learning further enhances model performance, while achieving stable simultaneous improvements remains challenging**
   - We apply RL across diverse capabilities, including reasoning, perception, grounding, and human preference alignment, spanning modalities including text, images, and videos. While this hybrid training approach further unlock model’s potential, interference across data domains remains a challenge.
 
 ## II. Model Details
@@ -87,9 +87,9 @@ In multi-modal reasoning, both the SFT and RL models significantly outperform al
 > Results marked with \* are obtained using our evaluation framework.
 > Tasks with ${\dagger}$ are evaluated by GPT-4o.
 
-### GUI Grounding
+### GUI Tasks
 
-MiMo-VL-7B-RL possess exceptional GUI Understanding and Grounding capabilities. As a general-purpose VL model, MiMo-VL achieves comparable or even superior performance to GUI-specialized models.
+MiMo-VL-7B-RL possess exceptional GUI understanding and grounding capabilities. As a general-purpose VL model, MiMo-VL achieves comparable or even superior performance to GUI-specialized models.
 
 <p align="center">
   <img width="95%" src="https://github.com/XiaomiMiMo/MiMo-VL/raw/main/figures/benchmarks_gui.png?raw=true">
